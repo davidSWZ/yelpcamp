@@ -26,7 +26,7 @@ app.use(methodOverride("_method"));
 app.use("/", express.static("public"));
 app.use(flash());
 
-seedDB();
+// seedDB();
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
     secret:"YelpCamp is great!",
