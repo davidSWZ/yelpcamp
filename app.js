@@ -12,12 +12,12 @@ var express               = require("express"),
     seedDB                = require("./seeds.js"),
     methodOverride        = require("method-override"),
     flash                 = require("connect-flash");
-    
+
 var indexRoutes      = require("./routes/index.js"),
     campgroundRoutes = require("./routes/campgrounds.js"),
     commentRoutes    = require("./routes/comments.js");
 
-    
+
 mongoose.connect('mongodb://localhost:27017/yelp_app', { useNewUrlParser: true });
 
 app.set("view engine", "ejs");
@@ -50,6 +50,6 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comment", commentRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("The YelpCamp app has started!"); 
+app.listen(5000, process.env.IP, function(){
+   console.log("The YelpCamp app has started!");
 });
